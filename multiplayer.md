@@ -13,10 +13,6 @@ The multiplayer game revolves around this core concept. At first it seems like a
 
 Lines are formed when a player drops their falling Tetromino piece on other still blocks. The block lines that are then transferred to the other player, as a penalty, omit the blocks from the last Tetromino that fell and completed the lines. We want the transferred lines to be incomplete, because otherwise they would be cleared immediately as soon as they appeared in the other player's grid.
 
-### Recursive line transferring
-
-~~It's possible for the blocks received from the other player as a penalty to be a blessing in disguise, and help the receiving player form lines upon the new blocks' arrival. These blocks create the opposite effect for the receiving player, as they offer extra points instead of a penalty. To avoid infinite recursion, these lines are no longer transferred back to the player which created the original lines.~~ This functionality was removed in favor of a simpler, easier to understand game dynamic.
-
 ### Pushing up the falling Tetromino
 
 If a player's falling Tetromino is close to hitting the ground, transferred blocks from the other player (which just cleared a few lines) will cause the "ground" to rise a few lines and potentially overlap with the falling Tetromino. In this case the falling Tetromino is pushed up as many lines as needed, and will continue to drop from the new (higher) position afterwards.
